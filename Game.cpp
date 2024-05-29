@@ -127,7 +127,7 @@ public:
         mvwprintw(info, 4, 2, "+ :  0");
         mvwprintw(info, 5, 2, "- :  0");
         mvwprintw(info, 6, 2, "G :  0");
-        mvwprintw(info, 8, 2, "[ Item Cooltime ]");
+        mvwprintw(info, 8, 2, "[ Item Respawn time ]");
         string tmp = "Item : "+ to_string(item_tick);
         mvwprintw(info, 9, 2, to_char(tmp,b));
         wclear(miss);

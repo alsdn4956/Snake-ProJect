@@ -29,7 +29,7 @@ int main() {
     noecho();
     const char * text = "Drink Thief";
 
-    init_pair(TITLE1, COLOR_MAGENTA, COLOR_WHITE);
+    init_pair(TITLE1, COLOR_GREEN, COLOR_WHITE);
     int xMax, yMax;
 
     bkgd(COLOR_PAIR(TITLE1));
@@ -51,7 +51,7 @@ int main() {
         mvprintw(i+4, (xMax/2)-25, "/_______  /\\____|__  /\\____|__  /____|__ \\/_______  /");
         mvprintw(i+5, (xMax/2)-25, "        \\/         \\/         \\/        \\/        \\/ ");
 
-        mvprintw(i+7, (xMax/2)-25, "                    <Climbing a ladder>                        ");
+        mvprintw(i+7, (xMax/2)-25, "                  <Climbing a ladder>                        ");
 
         attroff(A_BOLD);
         refresh();
@@ -139,7 +139,7 @@ int main() {
             wclear(mission_win);
             mvwprintw(mission_win, 1, 8, "[ Game Over! ]");
             mvwprintw(mission_win, 3, 11, "ReStart?");
-            mvwprintw(mission_win, 4, 13, "Y/N");
+            mvwprintw(mission_win, 4, 13, "[Y] / [N]");
             wborder(mission_win, ' ',' ',' ',' ',' ',' ',' ',' ');
             box(mission_win, 0, 0);
             wrefresh(mission_win);
@@ -158,7 +158,7 @@ int main() {
             wclear(mission_win);
             mvwprintw(mission_win, 1, 7, "[ Game Clear! ]");
             mvwprintw(mission_win, 3, 11, "ReStart?");
-            mvwprintw(mission_win, 4, 13, "YES / NO");
+            mvwprintw(mission_win, 4, 13, "[Y] / [N]");
             wborder(mission_win, ' ',' ',' ',' ',' ',' ',' ',' ');
             box(mission_win, 0, 0);
             wrefresh(mission_win);
