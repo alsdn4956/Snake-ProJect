@@ -144,7 +144,7 @@ public:
         mvwprintw(info, 4, 2, "+ :  0");
         mvwprintw(info, 5, 2, "- :  0");
         mvwprintw(info, 6, 2, "G :  0");
-        mvwprintw(info, 8, 2, "[ Item Cooltime ]");
+        mvwprintw(info, 8, 2, "[ Item Respawn Time ]");
 
         string tmp = "Item : " + to_string(item_tick);
         
@@ -220,46 +220,46 @@ public:
 
         wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
         switch (item) {
-            case GROWTH:
-                wattron(miss, COLOR_PAIR(INFO));
-                tmp = "+ :  " + to_string(sc_growth);
-                mvwprintw(info, 4, 2, to_char(tmp, b));
-                wattroff(miss, COLOR_PAIR(INFO));
-                wattron(miss, COLOR_PAIR(MISSION_CLEARED));
+        case GROWTH:
+            wattron(miss, COLOR_PAIR(INFO));
+            tmp = "+ :  " + to_string(sc_growth);
+            mvwprintw(info, 4, 2, to_char(tmp, b));
+            wattroff(miss, COLOR_PAIR(INFO));
+            wattron(miss, COLOR_PAIR(MISSION_CLEARED));
 
-                if (sc_growth == mission[1]) {
-                    mvwprintw(miss, 5, 10, "(V)");
-                }
+            if (sc_growth == mission[1]) {
+                mvwprintw(miss, 5, 10, "(V)");
+            }
 
-                wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
-                break;
-            case POISON:
-                wattron(miss, COLOR_PAIR(INFO));
-                tmp = "- :  " + to_string(sc_poison);
-                mvwprintw(info, 5, 2, to_char(tmp, b));
-                wattroff(miss, COLOR_PAIR(INFO));
-                wattron(miss, COLOR_PAIR(MISSION_CLEARED));
+            wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
+            break;
+        case POISON:
+            wattron(miss, COLOR_PAIR(INFO));
+            tmp = "- :  " + to_string(sc_poison);
+            mvwprintw(info, 5, 2, to_char(tmp, b));
+            wattroff(miss, COLOR_PAIR(INFO));
+            wattron(miss, COLOR_PAIR(MISSION_CLEARED));
 
-                if (sc_poison == mission[2]) {
-                    mvwprintw(miss, 6, 10, "(V)");
-                }
+            if (sc_poison == mission[2]) {
+                mvwprintw(miss, 6, 10, "(V)");
+            }
 
-                wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
-                break;
-            case GATE1:
-            case GATE2:
-                wattron(miss, COLOR_PAIR(INFO));
-                tmp = "G :  " + to_string(sc_gate);
-                mvwprintw(info, 6, 2, to_char(tmp, b));
-                wattroff(miss, COLOR_PAIR(INFO));
-                wattron(miss, COLOR_PAIR(MISSION_CLEARED));
+            wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
+            break;
+        case GATE1:
+        case GATE2:
+            wattron(miss, COLOR_PAIR(INFO));
+            tmp = "G :  " + to_string(sc_gate);
+            mvwprintw(info, 6, 2, to_char(tmp, b));
+            wattroff(miss, COLOR_PAIR(INFO));
+            wattron(miss, COLOR_PAIR(MISSION_CLEARED));
 
-                if (sc_gate == mission[3]) {
-                    mvwprintw(miss, 7, 10, "(V)");
-                }
-                
-                wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
-                break;
+            if (sc_gate == mission[3]) {
+                mvwprintw(miss, 7, 10, "(V)");
+            }
+
+            wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
+            break;
         }
 
         wattroff(miss, COLOR_PAIR(MISSION_CLEARED));
@@ -610,12 +610,12 @@ public:
         return true;
     }
 
-    void draw() {
+    void draw_board() {
         for (int y = 0; y < 21; y++) {
             for (int x = 0; x < 21; x++) {
                 int now = map[y][x];
                 wattron(win, COLOR_PAIR(now));
-                mvwprintw(win, y, x * 2, "aa");
+                mvwprintw(win, y, x * 2, "o ");
                 wattroff(win, COLOR_PAIR(now));
             }
         }
