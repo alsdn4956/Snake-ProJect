@@ -73,12 +73,12 @@ public:
         init_pair(EMPTY, COLOR_WHITE, COLOR_WHITE);
         init_pair(HEAD, COLOR_BLUE, COLOR_BLUE);
         init_pair(BODY, COLOR_YELLOW, COLOR_YELLOW);
-        init_pair(WALL, COLOR_CYAN, COLOR_CYAN);
-        init_pair(IM_WALL, COLOR_CYAN, COLOR_CYAN);
+        init_pair(WALL, COLOR_BLACK, COLOR_BLACK);
+        init_pair(IM_WALL, COLOR_BLACK, COLOR_BLACK);
         init_pair(GROWTH, COLOR_GREEN, COLOR_GREEN);
         init_pair(POISON, COLOR_RED, COLOR_RED);
-        init_pair(GATE1, COLOR_MAGENTA, COLOR_MAGENTA);
-        init_pair(GATE2, COLOR_MAGENTA, COLOR_MAGENTA);
+        init_pair(GATE1, COLOR_CYAN, COLOR_CYAN);
+        init_pair(GATE2, COLOR_CYAN, COLOR_CYAN);
     }
 
     int load_map(string uri) {

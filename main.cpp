@@ -5,7 +5,7 @@
 #include <fstream>
 #include <deque>
 #include <cstring>
-#include <unistd.h>
+#include <unistd.h> 
 #include <stdlib.h>
 #include "Game.cpp"
 using namespace std;
@@ -50,6 +50,9 @@ int main() {
         mvprintw(i+3, (xMax/2)-25, " /        \\/    |    \\/    |    \\    |  \\  |        \\");
         mvprintw(i+4, (xMax/2)-25, "/_______  /\\____|__  /\\____|__  /____|__ \\/_______  /");
         mvprintw(i+5, (xMax/2)-25, "        \\/         \\/         \\/        \\/        \\/ ");
+
+        mvprintw(i+7, (xMax/2)-25, "                    <Climbing a ladder>                        ");
+
         attroff(A_BOLD);
         refresh();
 
@@ -155,7 +158,7 @@ int main() {
             wclear(mission_win);
             mvwprintw(mission_win, 1, 7, "[ Game Clear! ]");
             mvwprintw(mission_win, 3, 11, "ReStart?");
-            mvwprintw(mission_win, 4, 13, "Y/N");
+            mvwprintw(mission_win, 4, 13, "YES / NO");
             wborder(mission_win, ' ',' ',' ',' ',' ',' ',' ',' ');
             box(mission_win, 0, 0);
             wrefresh(mission_win);
