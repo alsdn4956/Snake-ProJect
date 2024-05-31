@@ -1,8 +1,7 @@
 # C++ 팀프로젝트 Snakegame 만들기
 -------------------------------------------
 
-
-## &lt;div&gt;Climbing a ladder;/div&gt;
+## &lt;Climbing a ladder&gt;
 
 장민우
 황수민
